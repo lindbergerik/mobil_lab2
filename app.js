@@ -8,21 +8,21 @@ app.beaconRegions =
 [
 	{
 		id: 'page-barbro',
-		uuid:'A89A1F7F-0097-4D33-A99C-2E98D90B6FA9',
+		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+		major: 56506,
+		minor: 14941
+	},
+	{
+		id: 'page-laneta',
+		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+		major: 33349,
+		minor: 27161
+	},
+	{
+		id: 'page-tak',
+		uuid:'0F6A1B83-49D6-4FC3-9EEB-222670A31983',
 		major: 16808,
 		minor: 19400
-	},
-	{
-		id: 'page-shoulders',
-		uuid:'03218445-2ca3-4b96-becf-1578877753ca',
-		major: 34576,
-		minor: 18574
-	},
-	{
-		id: 'page-face',
-		uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-		major: 57272,
-		minor: 20467
 	}
 ]
 
@@ -117,8 +117,7 @@ app.didRangeBeaconsInRegion = function(pluginResult)
 	//console.log('ranged beacon: ' + pageId + ' ' + beacon.proximity)
 
 	// If the beacon is close and represents a new page, then show the page.
-	if ((beacon.proximity == 'ProximityImmediate' || beacon.proximity == 'ProximityNear')
-		&& app.currentPage == 'page-default')
+	if (beacon.proximity == 'ProximityImmediate')
 	{
 		app.gotoPage(pageId)
 		return
